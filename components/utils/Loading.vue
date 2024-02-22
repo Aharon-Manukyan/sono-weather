@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import spinner from "../public/spinner.svg"
+import spinner from "~/assets/spinner.svg"
 </script>

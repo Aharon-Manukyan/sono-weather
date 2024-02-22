@@ -20,7 +20,7 @@
 </template>
   
 <script setup>
-import Loading from "./Loading.vue"
+import Loading from "../utils/Loading.vue"
 
 const props = defineProps({
   apiKey: {

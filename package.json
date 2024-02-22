@@ -10,12 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
     "nuxt": "^3.10.2",
     "vue": "^3.4.19",
     "vue-multiselect": "^2.1.8",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@samk-dev/nuxt-vcalendar": "^1.0.2",
     "sass": "^1.71.1"
   }
 }

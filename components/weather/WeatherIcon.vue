@@ -38,18 +38,18 @@
 
 <script setup>
 
-import CloudyDay1 from "../public/cloudy-day-1.svg"
-import CloudyDay2 from "../public/cloudy-day-2.svg"
-import CloudyDay3 from "../public/cloudy-day-2.svg"
+import CloudyDay1 from "~/assets/cloudy-day-1.svg"
+import CloudyDay2 from "~/assets/cloudy-day-2.svg"
+import CloudyDay3 from "~/assets/cloudy-day-2.svg"
 
-import Clear from "../public/cloudy.svg"
-import Rainy1 from "../public/rainy-1.svg"
+import Clear from "~/assets/cloudy.svg"
+import Rainy1 from "~/assets/rainy-1.svg"
 
-import Rainy5 from "../public/rainy-5.svg"
+import Rainy5 from "~/assets/rainy-5.svg"
 
-import Snowy1 from "../public/snowy-1.svg"
+import Snowy1 from "~/assets/snowy-1.svg"
 
-import Snowy5 from "../public/snowy-5.svg"
+import Snowy5 from "~/assets/snowy-5.svg"
 
 
 const props = defineProps({
@@ -62,7 +62,6 @@ const props = defineProps({
         required: true
     }
 })
-const name = computed(() => props.name)
 </script>
 
 <style lang="scss" scoped>
