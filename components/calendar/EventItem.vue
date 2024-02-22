@@ -37,15 +37,8 @@ const props = defineProps({
 const emits = defineEmits(["deleteEvent", "showModal", "checkedEvent"])
 const changeDateFormat = (date) => {
     if (date) {
-        const monthNames = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
         let newDate = new Date(date)
-        const day = newDate.getDate();
-        const monthIndex = newDate.getMonth();
-        const year = newDate.getFullYear();
-        return `${day}/${monthNames[monthIndex]}/${year}`
+        return newDate.toLocaleString("default", { day: "2-digit", month: "long", year: "numeric" })
     }
 }
 const showDescriptionModal = (id) => {

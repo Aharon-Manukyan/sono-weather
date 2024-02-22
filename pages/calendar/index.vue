@@ -18,6 +18,8 @@
                 <div class="main__calendar">
                     <h2>Calendar</h2>
                     <VDatePicker v-model="date" :attributes="attrs" />
+                    <h2>Custom Calendar</h2>
+                    <CalendarCustomCalendar @showModal="showModal"></CalendarCustomCalendar>
                 </div>
             </div>
         </client-only>
@@ -87,15 +89,8 @@ const selectedDateFormat = computed(() => {
 
 const changeDateFormat = (date) => {
     if (date) {
-        const monthNames = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
         let newDate = new Date(date)
-        const day = newDate.getDate();
-        const monthIndex = newDate.getMonth();
-        const year = newDate.getFullYear();
-        return `${day}/${monthNames[monthIndex]}/${year}`
+        return newDate.toLocaleString("default", { day: "2-digit", month: "long", year: "numeric" })
     }
 }
 const formData = ref({
@@ -137,10 +132,14 @@ const checkedEvent = (id) => {
     store.checkedEvent(id)
 }
 
+const showModal = (customDate) => {
+    isVisible.value = true
+    date.value = customDate
+}
+
 
 watch(date, (newValue) => {
     if (newValue) {
-        console.log(newValue, "newValue")
         isVisible.value = true
     } else {
         isVisible.value = false;
